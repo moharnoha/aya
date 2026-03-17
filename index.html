@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لأية – مشاعر قلبية صادقة 💖</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff0f5;
+    color: #333;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  h1 {
+    text-align: center;
+    color: #c71585;
+  }
+  .question {
+    margin-bottom: 20px;
+    background-color: #ffe6f0;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  label {
+    display: block;
+    margin: 5px 0;
+  }
+  textarea {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+  }
+  button {
+    background-color: #c71585;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  button:hover {
+    background-color: #ff1493;
+  }
+</style>
+</head>
+<body>
+
+<h1>لأية – اكتشف مشاعرك الداخلية بثقة 💖</h1>
+<form id="loveForm">
+
+<script>
+// أسئلة مختارة لشخصية برج الجدي: مشاعر داخلية وعاطفة دون ضغط
+const questions = [
+  {q:"1. ما شعورك تجاه اللحظات التي نقضيها معًا؟", options:["راحة واطمئنان","سعادة حقيقية","اشتياق عند الانفصال","كل ما سبق"]},
+  {q:"2. عند التفكير بي، أي شعور يسيطر عليك غالبًا؟", options:["حنين واشتياق","دفء وطمأنينة","فضول لمعرفة المزيد عني","كل ما سبق"]},
+  {q:"3. كيف تشعرين عندما أتحدث معك بصراحة؟", options:["راحة وثقة","فرح واهتمام","امتنان كبير","كل ما سبق"]},
+  {q:"4. أي اللحظات الصغيرة معي تجعلك تبتسم أكثر؟", options:["ضحكنا معًا","لحظات دعمك لي","اللحظات العاطفية الصامتة","كل ما سبق"]},
+  {q:"5. ما شعورك الداخلي عند غيابي؟", options:["اشتياق بسيط","حزن قليل","أفكر بك كثيرًا","كل ما سبق"]},
+  {q:"6. عند تذكرك لي، ما أول شعور يخطر في بالك؟", options:["أمان وطمأنينة","حب واشتياق","سعادة ودفء","كل ما سبق"]},
+  {q:"7. إذا حصل بيننا موقف صعب، شعورك سيكون؟", options:["قلق قليل","تفكير منطقي مع شعور داخلي","أشعر بدعم كبير","كل ما سبق"]},
+  {q:"8. ما أكثر شيء يعكس مشاعرك لي؟", options:["دفء وحنان داخلي","سعادة وفرح داخلي","اشتياق واهتمام","كل ما سبق"]},
+  {q:"9. كيف تصفين علاقتنا من منظورك الداخلي؟", options:["أمان واستقرار","حب ودفء","قوة المشاعر العميقة","كل ما سبق"]},
+  {q:"10. إذا أعطيت نفسك فرصة للتعبير عن مشاعرك لي الآن، ماذا تختارين؟", options:["ابتسامة وطمأنينة","تفكير مليء بالحب","كتابة أو حديث صادق","كل ما سبق"]}
+];
+
+// إنشاء الأسئلة في النموذج
+for(let i=0;i<questions.length;i++){
+  document.write(`<div class="question"><p>${questions[i].q}</p>`);
+  for(let j=0;j<questions[i].options.length;j++){
+    document.write(`<label><input type="radio" name="q${i+1}" value="${j+1}"> ${questions[i].options[j]}</label>`);
+  }
+  // مساحة صغيرة للتوضيح الحر
+  document.write(`<textarea name="txt${i+1}" placeholder="إذا أحببت أضف تفاصيل هنا..."></textarea>`);
+  document.write(`</div>`);
+}
+</script>
+
+<button type="button" onclick="sendWhatsApp()">إرسال</button>
+</form>
+
+<script>
+function sendWhatsApp() {
+  const form = document.getElementById('loveForm');
+  const radios = form.querySelectorAll('input[type="radio"]:checked');
+  const textareas = form.querySelectorAll('textarea');
+
+  if(radios.length < questions.length) {
+    alert('يرجى الإجابة على كل الأسئلة!');
+    return;
+  }
+
+  let message = "💖 إجابات أية – اكتشاف مشاعرها الداخلية:\n\n";
+
+  for(let i=0;i<questions.length;i++){
+    const questionText = questions[i].q;
+    const answerText = questions[i].options[radios[i].value - 1];
+    const extraText = textareas[i].value.trim();
+    message += `${i+1}. ${questionText}\n→ ${answerText}`;
+    if(extraText) message += `\n→ إضافي: ${extraText}`;
+    message += `\n\n`;
+  }
+
+  const encodedMessage = encodeURIComponent(message);
+  const phoneNumber = "212688941181"; // رقمك بدون +
+  window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+}
+</script>
+
+</body>
+</html>
