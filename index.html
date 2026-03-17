@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لأية – تجربة مشاعر راقية 💖</title>
+<title>إلى حبيبتي أية 💖</title>
 <style>
   :root {
-    --primary-color: #c71585;
-    --secondary-color: #f8bbd0;
-    --bg-color: #fdf7f9;
-    --text-dark: #2d3436;
-    --shadow: 0 4px 15px rgba(0,0,0,0.05);
+    --primary-color: #ff4d94;
+    --secondary-color: #ffb3d1;
+    --bg-color: #fff9fb;
+    --text-dark: #4a4a4a;
+    --shadow: 0 10px 25px rgba(255, 77, 148, 0.1);
   }
 
   body {
@@ -23,11 +23,11 @@
   }
 
   .container {
-    max-width: 700px;
-    margin: 40px auto;
+    max-width: 650px;
+    margin: 30px auto;
     background: #fff;
-    padding: 30px;
-    border-radius: 20px;
+    padding: 40px 30px;
+    border-radius: 30px;
     box-shadow: var(--shadow);
   }
 
@@ -38,99 +38,109 @@
 
   h1 {
     color: var(--primary-color);
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 15px;
   }
 
   .intro-text {
-    color: #636e72;
-    font-size: 15px;
+    color: #888;
+    font-size: 16px;
+    font-style: italic;
   }
 
   .question-card {
     background: #fff;
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 15px;
+    border: 1.5px solid #f0f0f0;
+    padding: 25px;
+    border-radius: 20px;
     margin-bottom: 25px;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
   }
 
   .question-card:hover {
     border-color: var(--secondary-color);
+    transform: translateY(-2px);
   }
 
   .question-text {
-    font-weight: 600;
+    font-weight: bold;
     display: block;
     margin-bottom: 15px;
     color: var(--primary-color);
+    font-size: 18px;
   }
 
   label {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 12px 0;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 12px;
+    background: #fafafa;
     transition: background 0.2s;
   }
 
   label:hover {
-    background: var(--bg-color);
+    background: #fff0f5;
   }
 
   input[type="radio"] {
-    margin-left: 10px;
+    margin-left: 12px;
     accent-color: var(--primary-color);
+    width: 18px;
+    height: 18px;
   }
 
   textarea {
     width: 100%;
-    height: 60px;
+    height: 70px;
     margin-top: 15px;
     padding: 12px;
     border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border-radius: 12px;
     font-family: inherit;
     resize: none;
     box-sizing: border-box;
+    font-size: 14px;
+    background: #fdfdfd;
   }
 
   .notice-box {
-    background-color: #fff9db;
-    border-right: 5px solid #fcc419;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #856404;
+    background-color: #fff0f5;
+    border-right: 5px solid var(--primary-color);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #a0106b;
+    line-height: 1.5;
   }
 
   button {
     width: 100%;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #ff4d94 0%, #ff7eb3 100%);
     color: white;
-    padding: 15px;
+    padding: 18px;
     border: none;
-    border-radius: 12px;
-    font-size: 18px;
+    border-radius: 15px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
-    box-shadow: 0 4px 10px rgba(199, 21, 133, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(255, 77, 148, 0.3);
   }
 
   button:hover {
-    background-color: #a0106b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 77, 148, 0.4);
   }
 
   footer {
     text-align: center;
-    margin-top: 30px;
-    font-size: 12px;
-    color: #b2bec3;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #d1d1d1;
   }
 </style>
 </head>
@@ -138,22 +148,22 @@
 
 <div class="container">
   <header>
-    <h1>لأية – مساحة المشاعر الآمنة 💖</h1>
-    <p class="intro-text">شاركينا ما يجول في خاطركِ بكل هدوء وصدق.</p>
+    <h1>إلى أميرتي أية.. مساحة لقلبك 💖</h1>
+    <p class="intro-text">أية، هذا المكان لكِ وحدكِ.. عبّري عن كل ما بداخلِكِ بصدق، أنا هنا لأسمعكِ دائماً.</p>
   </header>
 
   <form id="loveForm">
     <div id="questionsContainer"></div>
 
     <div class="notice-box">
-      <strong>ملاحظة هامة:</strong> 
-      عند الضغط على زر الإرسال، سيتم تحويلكِ إلى تطبيق واتساب لمراجعة إجاباتكِ وإرسالها يدوياً. هذه الخطوة تضمن خصوصيتكِ الكاملة وتمنحكِ الفرصة لقراءة الرسالة قبل مشاركتها.
+      <strong>ملاحظة رقيقة لقلبك:</strong> 
+      حبيبتي، بمجرد الضغط على الزر، سيتم تجهيز كلامكِ الجميل في رسالة واتساب، وبعدها يمكنكِ مراجعتها وإرسالها لي بضغطة واحدة لتصل لقلبي مباشرة.
     </div>
 
-    <button type="button" onclick="sendWhatsApp()">إرسال عبر واتساب</button>
+    <button type="button" onclick="sendWhatsApp()">أرسليها لقلبي الآن 💝</button>
   </form>
 
-  <footer>جميع الحقوق محفوظة © 2026</footer>
+  <footer>صُنع بكل حب من أجلكِ</footer>
 </div>
 
 <script>
@@ -182,7 +192,7 @@ questions.forEach((item, index) => {
           ${opt}
         </label>
       `).join('')}
-      <textarea name="txt${index}" placeholder="تعبير إضافي (اختياري)..."></textarea>
+      <textarea name="txt${index}" placeholder="أضيفي أي كلمة تودين قولها هنا..."></textarea>
     </div>
   `;
   container.innerHTML += qHtml;
@@ -192,19 +202,19 @@ function sendWhatsApp() {
   const radios = document.querySelectorAll('input[type="radio"]:checked');
   
   if(radios.length < questions.length) {
-    alert('لطفاً، أكملي الإجابة على جميع الأسئلة.');
+    alert('حبيبتي أية، يرجى الإجابة على جميع الأسئلة لتكتمل الرسالة 🌸');
     return;
   }
 
-  let message = "*💖 نتائج استبيان المشاعر - أية 💖*\n\n";
+  let message = "*💖 رسالة من قلب أية الغالية 💖*\n\n";
 
   questions.forEach((q, i) => {
     const selectedRadio = document.querySelector(`input[name="q${i}"]:checked`);
     const extraText = document.getElementsByName(`txt${i}`)[0].value.trim();
     
-    message += `*س: ${q.q}*\n`;
-    message += `*ج:* ${q.options[selectedRadio.value]}\n`;
-    if(extraText) message += `*توضيح:* ${extraText}\n`;
+    message += `*${q.q}*\n`;
+    message += `← ${q.options[selectedRadio.value]}\n`;
+    if(extraText) message += `*كلمة من أية:* ${extraText}\n`;
     message += `\n`;
   });
 
