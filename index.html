@@ -6,6 +6,11 @@
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* حل مشكلة الفراغ الأبيض خلف الهيدر عند السحب */
+        html {
+            background-color: #f7fafc;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -15,7 +20,7 @@
             text-align: center;
             padding-bottom: 80px; 
             padding-top: 70px;
-            /* حل مشكلة انفصال الهيدر عند السحب (Overscroll) */
+            /* منع السلوك الافتراضي الذي يسبب فراغ عند السحب */
             overscroll-behavior-y: none;
             -webkit-overflow-scrolling: touch;
         }
@@ -34,10 +39,11 @@
             left: 0;
             right: 0;
             z-index: 9999;
-            /* ربط الهيدر بطبقة العرض لضمان عدم الانفصال أثناء الجر */
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
+            /* تثبيت الهيدر ومنع اهتزازه أو اختفائه */
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
         .logo {
@@ -193,6 +199,7 @@
             z-index: 9999;
             direction: rtl;
             transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
 
         .nav-item {
