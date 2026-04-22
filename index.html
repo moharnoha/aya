@@ -6,7 +6,7 @@
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* حل مشكلة التصلب وجعل المحتوى يمر بسلاسة تحت الهيدر */
+        /* حل شامل لمشاكل التمرير والسحب الزائد */
         html, body {
             margin: 0;
             padding: 0;
@@ -14,8 +14,9 @@
             height: 100%;
             background-color: #ffffff;
             -webkit-tap-highlight-color: transparent;
-            /* السماح بالسحب الطبيعي دون "تصلب" الهيدر مع الصفحة */
-            overscroll-behavior-y: auto; 
+            /* منع سحب الصفحة بالكامل (bounce effect) لضمان ثبات العناصر الهيكلية */
+            overscroll-behavior-y: none; 
+            overflow-x: hidden;
         }
 
         body {
@@ -23,7 +24,11 @@
             color: #1e293b;
             text-align: center;
             padding-bottom: 80px; 
-            padding-top: 70px; /* مساحة مساوية لطول الهيدر لكي لا يغطي المحتوى الأول */
+            padding-top: 70px;
+            /* السماح بالتمرير الداخلي فقط للمحتوى */
+            overflow-y: auto;
+            height: 100%;
+            box-sizing: border-box;
         }
 
         /* --- Header Section --- */
@@ -35,12 +40,14 @@
             padding: 0 20px;
             background-color: #f7fafc; 
             border-bottom: none;
-            position: fixed; /* يبقى ثابتاً في مكانه العلوي */
+            position: fixed; 
             top: 0;
             left: 0;
             right: 0;
             z-index: 9999;
-            /* المحتوى سيمر من تحته بفضل خاصية fixed و z-index */
+            /* إجبار الهيدر على البقاء في طبقة منفصلة لمنع تأثره بحركة المحتوى */
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
             box-sizing: border-box;
         }
 
@@ -196,6 +203,8 @@
             border-top: none;
             z-index: 9999;
             direction: rtl;
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
         }
 
         .nav-item {
