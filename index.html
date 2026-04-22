@@ -30,7 +30,7 @@
             top: 0;
             left: 0;
             right: 0;
-            z-index: 3000;
+            z-index: 9999; /* رفع القيمة لضمان ظهوره دائماً فوق أي عنصر آخر */
         }
 
         .logo {
@@ -182,7 +182,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border-top: 1px solid #e2e8f0;
+            border-top: none; /* إزالة الحواف لكي يندمج مع خلفية الصفحة */
             z-index: 2000;
             direction: rtl;
         }
