@@ -6,18 +6,24 @@
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* حل مشكلة التصلب وجعل المحتوى يمر بسلاسة تحت الهيدر */
+        html, body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            width: 100%;
+            height: 100%;
             background-color: #ffffff;
+            -webkit-tap-highlight-color: transparent;
+            /* السماح بالسحب الطبيعي دون "تصلب" الهيدر مع الصفحة */
+            overscroll-behavior-y: auto; 
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
             color: #1e293b;
             text-align: center;
             padding-bottom: 80px; 
-            padding-top: 70px;
-            /* حل مشكلة انفصال الهيدر عند السحب (Overscroll) */
-            overscroll-behavior-y: none;
-            -webkit-overflow-scrolling: touch;
+            padding-top: 70px; /* مساحة مساوية لطول الهيدر لكي لا يغطي المحتوى الأول */
         }
 
         /* --- Header Section --- */
@@ -28,16 +34,14 @@
             justify-content: space-between;
             padding: 0 20px;
             background-color: #f7fafc; 
-            border-bottom: none; 
-            position: fixed; 
+            border-bottom: none;
+            position: fixed; /* يبقى ثابتاً في مكانه العلوي */
             top: 0;
             left: 0;
             right: 0;
             z-index: 9999;
-            /* ربط الهيدر بطبقة العرض لضمان عدم الانفصال أثناء الجر */
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            backface-visibility: hidden;
+            /* المحتوى سيمر من تحته بفضل خاصية fixed و z-index */
+            box-sizing: border-box;
         }
 
         .logo {
@@ -192,7 +196,6 @@
             border-top: none;
             z-index: 9999;
             direction: rtl;
-            transform: translateZ(0);
         }
 
         .nav-item {
