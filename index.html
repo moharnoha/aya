@@ -2,28 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* إعادة السلوك الطبيعي للمتصفح */
-        html, body {
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            overflow-x: hidden;
-            background-color: #ffffff;
-            -webkit-tap-highlight-color: transparent;
-            /* السماح بتأثير السحب والتحميل الطبيعي */
-            overscroll-behavior-y: auto; 
-        }
-
-        body {
             font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
             color: #1e293b;
             text-align: center;
-            padding-bottom: 80px; 
-            padding-top: 70px;
+            padding-bottom: 80px; /* لضمان عدم تغطية الشريط السفلي للمحتوى */
+            padding-top: 70px; /* إضافة مساحة علوية بسبب الهيدر الثابت */
         }
 
         /* --- Header Section --- */
@@ -33,15 +24,14 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            background-color: #f7fafc; 
-            border-bottom: none;
-            position: fixed;
+            background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
+            border-bottom: none; /* إزالة الحافة السفلية (المفصول) */
+            position: fixed; /* جعل الهيدر ثابتاً عند التمرير */
             top: 0;
             left: 0;
             right: 0;
-            z-index: 9999;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
+            z-index: 9999; /* رفع القيمة لضمان بقائه ثابتاً وفوق العناصر أثناء التحميل والتمرير */
+            transform: translateZ(0); /* تعزيز ثبات العنصر في المتصفحات الجوالة */
         }
 
         .logo {
@@ -128,7 +118,7 @@
 
         /* --- Services Grid Section --- */
         .services-container {
-            padding: 20px 0 20px 20px;
+            padding: 20px 0 20px 20px; /* إزالة المسافة في الأول (الجهة اليمنى لأن الاتجاه rtl) */
             display: flex;
             flex-direction: row-reverse;
             gap: 20px;
@@ -189,15 +179,13 @@
             left: 0;
             right: 0;
             height: 70px;
-            background-color: #f7fafc; 
+            background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border-top: none;
-            z-index: 9999;
+            border-top: none; /* إزالة الحواف لكي يندمج مع خلفية الصفحة */
+            z-index: 2000;
             direction: rtl;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
         }
 
         .nav-item {
