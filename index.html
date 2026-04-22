@@ -6,24 +6,22 @@
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            /* حل مشكلة انفصال الهيدر عند السحب في المتصفحات (Overscroll) */
-            overscroll-behavior-y: none; 
-            background-color: #ffffff;
+        html {
+            /* منع تأثير السحب المطاطي العلوي الذي يفصل الهيدر عن الصفحة */
+            overscroll-behavior-y: none;
         }
 
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: #1e293b;
             text-align: center;
             padding-bottom: 80px; /* لضمان عدم تغطية الشريط السفلي للمحتوى */
             padding-top: 70px; /* إضافة مساحة علوية بسبب الهيدر الثابت */
+            /* تحسين سلاسة التمرير ومنع اختفاء العناصر الثابتة */
+            -webkit-overflow-scrolling: touch;
         }
 
         /* --- Header Section --- */
@@ -40,9 +38,11 @@
             left: 0;
             right: 0;
             z-index: 9999;
-            /* تقنية لضمان بقاء الهيدر في مكانه وعدم اهتزازه عند السحب */
+            /* منع اهتزاز أو اختفاء الهيدر أثناء التمرير السريع */
             transform: translate3d(0, 0, 0);
             -webkit-transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
         .logo {
