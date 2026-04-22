@@ -6,11 +6,6 @@
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* حل مشكلة الفراغ الأبيض والتحكم في السحب للتحميل */
-        html {
-            background-color: #f7fafc; /* توحيد لون خلفية النظام مع الهيدر */
-        }
-
         body {
             margin: 0;
             padding: 0;
@@ -19,8 +14,10 @@
             color: #1e293b;
             text-align: center;
             padding-bottom: 80px; 
-            /* إزالة padding-top لأننا سنستخدم sticky */
-            overscroll-behavior-y: auto;
+            padding-top: 70px;
+            /* حل مشكلة انفصال الهيدر عند السحب (Overscroll) */
+            overscroll-behavior-y: none;
+            -webkit-overflow-scrolling: touch;
         }
 
         /* --- Header Section --- */
@@ -31,15 +28,16 @@
             justify-content: space-between;
             padding: 0 20px;
             background-color: #f7fafc; 
-            border-bottom: none;
-            /* استخدام sticky بدلاً من fixed لجعل الهيدر يتحرك مع الصفحة عند السحب */
-            position: -webkit-sticky;
-            position: sticky; 
+            border-bottom: none; 
+            position: fixed; 
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 9999;
-            box-sizing: border-box;
+            /* ربط الهيدر بطبقة العرض لضمان عدم الانفصال أثناء الجر */
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
+            backface-visibility: hidden;
         }
 
         .logo {
@@ -195,7 +193,6 @@
             z-index: 9999;
             direction: rtl;
             transform: translateZ(0);
-            -webkit-transform: translateZ(0);
         }
 
         .nav-item {
