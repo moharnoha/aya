@@ -2,19 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>claudsmm</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* منع السحب الزائد (Overscroll) وحل مشكلة اختفاء العناصر عند السحب */
+        html, body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overscroll-behavior-y: none; /* يمنع تأثير السحب المطاطي في المتصفحات الحديثة */
             background-color: #ffffff;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
             color: #1e293b;
             text-align: center;
-            padding-bottom: 80px; /* لضمان عدم تغطية الشريط السفلي للمحتوى */
-            padding-top: 70px; /* إضافة مساحة علوية بسبب الهيدر الثابت */
+            padding-bottom: 80px; 
+            padding-top: 70px;
         }
 
         /* --- Header Section --- */
@@ -24,13 +33,16 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
-            border-bottom: none; /* إزالة الحافة السفلية (المفصول) */
-            position: fixed; /* جعل الهيدر ثابتاً عند التمرير */
+            background-color: #f7fafc; 
+            border-bottom: none;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 9999; /* رفع القيمة لضمان ظهوره دائماً فوق أي عنصر آخر */
+            z-index: 9999;
+            /* منع تأثر الهيدر عند سحب الصفحة */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
 
         .logo {
@@ -117,7 +129,7 @@
 
         /* --- Services Grid Section --- */
         .services-container {
-            padding: 20px 0 20px 20px; /* إزالة المسافة في الأول (الجهة اليمنى لأن الاتجاه rtl) */
+            padding: 20px 0 20px 20px;
             display: flex;
             flex-direction: row-reverse;
             gap: 20px;
@@ -178,13 +190,15 @@
             left: 0;
             right: 0;
             height: 70px;
-            background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
+            background-color: #f7fafc; 
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border-top: none; /* إزالة الحواف لكي يندمج مع خلفية الصفحة */
-            z-index: 2000;
+            border-top: none;
+            z-index: 9999;
             direction: rtl;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
 
         .nav-item {
