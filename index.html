@@ -1,227 +1,154 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إلى حبيبتي أية 💖</title>
-<style>
-  :root {
-    --primary-color: #ff4d94;
-    --secondary-color: #ffb3d1;
-    --bg-color: #fff9fb;
-    --text-dark: #4a4a4a;
-    --shadow: 0 10px 25px rgba(255, 77, 148, 0.1);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>claudsmm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            text-align: center;
+        }
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-  }
+        /* --- Header Section --- */
+        header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            background-color: #5570f4; 
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+        }
 
-  .container {
-    max-width: 650px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 30px;
-    box-shadow: var(--shadow);
-  }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-transform: lowercase;
+            color: #ffffff;
+        }
 
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+        .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+            background-color: #ffffff;
+        }
 
-  h1 {
-    color: var(--primary-color);
-    font-size: 26px;
-    margin-bottom: 15px;
-  }
+        .btn-notes { background-color: #ffffff; }
+        .btn-report { background-color: #ffffff; }
+        .icon-circle:active { transform: scale(0.95); }
 
-  .intro-text {
-    color: #888;
-    font-size: 16px;
-    font-style: italic;
-  }
+        svg { width: 20px; height: 20px; fill: #475569; }
 
-  .question-card {
-    background: #fff;
-    border: 1.5px solid #f0f0f0;
-    padding: 25px;
-    border-radius: 20px;
-    margin-bottom: 25px;
-    transition: all 0.3s ease;
-  }
+        /* --- Welcome Section --- */
+        .hero {
+            padding: 60px 20px;
+        }
 
-  .question-card:hover {
-    border-color: var(--secondary-color);
-    transform: translateY(-2px);
-  }
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
 
-  .question-text {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    font-size: 18px;
-  }
+        .hero p {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
 
-  label {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 12px;
-    background: #fafafa;
-    transition: background 0.2s;
-  }
+        /* --- Bottom Sheet UI --- */
+        .bottom-sheet {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #5570f4;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            padding: 24px 20px 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
 
-  label:hover {
-    background: #fff0f5;
-  }
+        .sheet-btn {
+            width: 100%;
+            height: 56px;
+            border-radius: 14px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            direction: rtl;
+        }
 
-  input[type="radio"] {
-    margin-left: 12px;
-    accent-color: var(--primary-color);
-    width: 18px;
-    height: 18px;
-  }
+        .btn-google {
+            background-color: #ffffff;
+            color: #000000;
+        }
 
-  textarea {
-    width: 100%;
-    height: 70px;
-    margin-top: 15px;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    font-family: inherit;
-    resize: none;
-    box-sizing: border-box;
-    font-size: 14px;
-    background: #fdfdfd;
-  }
+        .btn-login {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
 
-  .notice-box {
-    background-color: #fff0f5;
-    border-right: 5px solid var(--primary-color);
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 12px;
-    font-size: 15px;
-    color: #a0106b;
-    line-height: 1.5;
-  }
-
-  button {
-    width: 100%;
-    background: linear-gradient(135deg, #ff4d94 0%, #ff7eb3 100%);
-    color: white;
-    padding: 18px;
-    border: none;
-    border-radius: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 5px 15px rgba(255, 77, 148, 0.3);
-  }
-
-  button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 77, 148, 0.4);
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 13px;
-    color: #d1d1d1;
-  }
-</style>
+        .sheet-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <header>
-    <h1>إلى أميرتي أية.. مساحة لقلبك 💖</h1>
-    <p class="intro-text">أية، هذا المكان لكِ وحدكِ.. عبّري عن كل ما بداخلِكِ بصدق، أنا هنا لأسمعكِ دائماً.</p>
-  </header>
+    <header>
+        <button class="icon-circle btn-notes">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </button>
 
-  <form id="loveForm">
-    <div id="questionsContainer"></div>
+        <div class="logo">claudsmm</div>
 
-    <div class="notice-box">
-      <strong>ملاحظة رقيقة لقلبك:</strong> 
-      حبيبتي، بمجرد الضغط على الزر، سيتم تجهيز كلامكِ الجميل في رسالة واتساب، وبعدها يمكنكِ مراجعتها وإرسالها لي بضغطة واحدة لتصل لقلبي مباشرة.
+        <button class="icon-circle btn-report">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        </button>
+    </header>
+
+    <main class="hero">
+        <h2>مرحباً بك في claudsmm</h2>
+        <p>وجهتك الأفضل لخدمات التسويق الرقمي المتميزة.</p>
+    </main>
+
+    <div class="bottom-sheet">
+        <button class="sheet-btn btn-google">
+            <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            المتابعة باستخدام حساب Google
+        </button>
+        <button class="sheet-btn btn-login">تسجيل الدخول</button>
     </div>
-
-    <button type="button" onclick="sendWhatsApp()">أرسليها لقلبي الآن 💝</button>
-  </form>
-
-  <footer>صُنع بكل حب من أجلكِ</footer>
-</div>
-
-<script>
-const questions = [
-  {q:"1. ما شعورك تجاه اللحظات التي نقضيها معًا؟", options:["راحة واطمئنان","سعادة حقيقية","اشتياق عند الانفصال","كل ما سبق"]},
-  {q:"2. عند التفكير بي، أي شعور يسيطر عليك غالبًا؟", options:["حنين واشتياق","دفء وطمأنينة","فضول لمعرفة المزيد عني","كل ما سبق"]},
-  {q:"3. كيف تشعرين عندما أتحدث معك بصراحة؟", options:["راحة وثقة","فرح واهتمام","امتنان كبير","كل ما سبق"]},
-  {q:"4. أي اللحظات الصغيرة معي تجعلك تبتسم أكثر؟", options:["ضحكنا معًا","لحظات دعمك لي","اللحظات العاطفية الصامتة","كل ما سبق"]},
-  {q:"5. ما شعورك الداخلي عند غيابي؟", options:["اشتياق بسيط","حزن قليل","أفكر بك كثيرًا","كل ما سبق"]},
-  {q:"6. عند تذكرك لي، ما أول شعور يخطر في بالك؟", options:["أمان وطمأنينة","حب واشتياق","سعادة ودفء","كل ما سبق"]},
-  {q:"7. إذا حصل بيننا موقف صعب، شعورك سيكون؟", options:["قلق قليل","تفكير منطقي مع شعور داخلي","أشعر بدعم كبير","كل ما سبق"]},
-  {q:"8. ما أكثر شيء يعكس مشاعرك لي؟", options:["دفء وحنان داخلي","سعادة وفرح داخلي","اشتياق واهتمام","كل ما سبق"]},
-  {q:"9. كيف تصفين علاقتنا من منظورك الداخلي؟", options:["أمان واستقرار","حب ودفء","قوة المشاعر العميقة","كل ما سبق"]},
-  {q:"10. إذا أعطيت نفسك فرصة للتعبير عن مشاعرك لي الآن، ماذا تختارين؟", options:["ابتسامة وطمأنينة","تفكير مليء بالحب","كتابة أو حديث صادق","كل ما سبق"]}
-];
-
-const container = document.getElementById('questionsContainer');
-
-questions.forEach((item, index) => {
-  let qHtml = `
-    <div class="question-card">
-      <span class="question-text">${item.q}</span>
-      ${item.options.map((opt, i) => `
-        <label>
-          <input type="radio" name="q${index}" value="${i}">
-          ${opt}
-        </label>
-      `).join('')}
-      <textarea name="txt${index}" placeholder="أضيفي أي كلمة تودين قولها هنا..."></textarea>
-    </div>
-  `;
-  container.innerHTML += qHtml;
-});
-
-function sendWhatsApp() {
-  const radios = document.querySelectorAll('input[type="radio"]:checked');
-  
-  if(radios.length < questions.length) {
-    alert('حبيبتي أية، يرجى الإجابة على جميع الأسئلة لتكتمل الرسالة 🌸');
-    return;
-  }
-
-  let message = "*💖 رسالة من قلب أية الغالية 💖*\n\n";
-
-  questions.forEach((q, i) => {
-    const selectedRadio = document.querySelector(`input[name="q${i}"]:checked`);
-    const extraText = document.getElementsByName(`txt${i}`)[0].value.trim();
-    
-    message += `*${q.q}*\n`;
-    message += `← ${q.options[selectedRadio.value]}\n`;
-    if(extraText) message += `*كلمة من أية:* ${extraText}\n`;
-    message += `\n`;
-  });
-
-  const phoneNumber = "212688941181";
-  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
-}
-</script>
 
 </body>
 </html>
