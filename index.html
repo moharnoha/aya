@@ -128,6 +128,8 @@
             gap: 20px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory; /* يضمن عودة العناصر لمكانها الثابت بسلاسة */
+            scroll-behavior: smooth;
         }
 
         .services-container::-webkit-scrollbar {
@@ -139,7 +141,8 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            min-width: 25.7%; /* تجعل 3 خيارات ونصف ظاهرة تقريباً */
+            min-width: 25.7%;
+            scroll-snap-align: start; /* محاذاة العناصر عند التمرير */
         }
 
         .service-circle {
@@ -278,7 +281,7 @@
             <span class="nav-label">الرئيسية</span>
         </a>
         <a href="#" class="nav-item">
-            <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
             <span class="nav-label">الخدمات</span>
         </a>
         <a href="#" class="nav-item">
