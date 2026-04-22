@@ -13,10 +13,10 @@
             background-color: #ffffff;
             color: #1e293b;
             text-align: center;
-            padding-bottom: 80px; /* لضمان عدم تغطية الشريط السفلي للمحتوى */
-            padding-top: 70px; /* إضافة مساحة علوية بسبب الهيدر الثابت */
-            /* حل مشكلة اختفاء الهيدر عند السحب في بعض المتصفحات */
-            overscroll-behavior-y: contain;
+            padding-bottom: 80px; 
+            padding-top: 70px;
+            /* حل مشكلة انفصال الهيدر عند السحب (Overscroll) */
+            overscroll-behavior-y: none;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -27,14 +27,17 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
-            border-bottom: none; /* إزالة الحافة السفلية (المفصول) */
-            position: fixed; /* جعل الهيدر ثابتاً عند التمرير */
+            background-color: #f7fafc; 
+            border-bottom: none; 
+            position: fixed; 
             top: 0;
             left: 0;
             right: 0;
-            z-index: 9999; /* رفع القيمة لضمان عدم الاختفاء خلف المحتوى */
-            transform: translateZ(0); /* تعزيز الأداء ومنع الوميض */
+            z-index: 9999;
+            /* ربط الهيدر بطبقة العرض لضمان عدم الانفصال أثناء الجر */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            backface-visibility: hidden;
         }
 
         .logo {
@@ -121,7 +124,7 @@
 
         /* --- Services Grid Section --- */
         .services-container {
-            padding: 20px 0 20px 20px; /* إزالة المسافة في الأول (الجهة اليمنى لأن الاتجاه rtl) */
+            padding: 20px 0 20px 20px;
             display: flex;
             flex-direction: row-reverse;
             gap: 20px;
@@ -182,11 +185,11 @@
             left: 0;
             right: 0;
             height: 70px;
-            background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
+            background-color: #f7fafc; 
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border-top: none; /* إزالة الحواف لكي يندمج مع خلفية الصفحة */
+            border-top: none;
             z-index: 9999;
             direction: rtl;
             transform: translateZ(0);
