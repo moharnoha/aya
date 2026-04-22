@@ -14,6 +14,7 @@
             color: #1e293b;
             text-align: center;
             padding-bottom: 80px; /* لضمان عدم تغطية الشريط السفلي للمحتوى */
+            padding-top: 70px; /* إضافة مساحة علوية بسبب الهيدر الثابت */
         }
 
         /* --- Header Section --- */
@@ -25,7 +26,11 @@
             padding: 0 20px;
             background-color: #f7fafc; /* اللون الجديد المأخوذ من الصورة */
             border-bottom: none; /* إزالة الحافة السفلية (المفصول) */
-            position: relative;
+            position: fixed; /* جعل الهيدر ثابتاً عند التمرير */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 3000;
         }
 
         .logo {
